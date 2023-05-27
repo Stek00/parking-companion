@@ -36,8 +36,10 @@ CREATE TABLE orari_festivi (
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
-    username VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(100) NOT NULL,
+	nome VARCHAR(100) NOT NULL,
+	cognome VARCHAR(100) NOT NULL,
+	telefono integer NOT NULL UNIQUE,
     email VARCHAR(100) NOT NULL UNIQUE,
 	veicolo VARCHAR(100),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -53,4 +55,87 @@ CREATE TABLE parking_reservations (
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (parking_spot_id) REFERENCES parcheggi(park_id)
 );
+
+
+INSERT INTO parcheggi (name, via,cap,citta,provincia,aeroporto,navetta,porto,prezzo)
+VALUES ('Park Colosseo','Via Ostilia 58', '00184', 'Roma', 'RM', 'FALSE', 'FALSE', 'FALSE', '5'),
+('Parco Leonardo Parking','Via Giulio Romano', '00054', 'Fiumicino', 'RM', 'TRUE', 'TRUE', 'FALSE', '8'),
+('Central Parking Malpensa','Via Luigi Bailo 11', '21019', 'Somma Lombardo', 'VA', 'TRUE', 'TRUE', 'FALSE', '12'),
+('Garage Sforza','Via Francesco Sforza 5', '20122', 'Milano', 'MI', 'FALSE', 'FALSE', 'FALSE', '7'),
+('Garage Santa Chiara','Via Bezzecca', '72100', 'Brindisi', 'BR', 'FALSE', 'TRUE', 'TRUE', '8'),
+('Autorimessa Principi di Piemonte','Via Pietro Gobetti 7d', '10123', 'Torino', 'TO', 'FALSE', 'FALSE', 'FALSE', '6'),
+('Garage Garibaldi','Via Torino 6', '80142', 'Napoli', 'NA', 'FALSE', 'FALSE', 'FALSE', '5'),
+('Garage Santacroce','Via delle Casine 17', '50122', 'Firenze', 'FI', 'FALSE', 'FALSE', 'FALSE', '6'),
+('GP Reggio Calabria','Via Placido Geraci', '89128', 'Reggio Calabria', 'RC', 'FALSE', 'FALSE', 'FALSE', '4'),
+('Autopark Ortigia','Piazza San Giuseppe 25', '96100', 'Siracusa', 'SR', 'FALSE', 'FALSE', 'FALSE', '4'),
+('Parking Garage Olimpo','Via Dino Bellucci 6', '16124', 'Genova', 'GE', 'FALSE', 'FALSE', 'FALSE', '5'),
+('Garage Venezia Isola Nova','Isola Nova del Tronchetto 37', '30135', 'Venezia', 'VE', 'FALSE', 'FALSE', 'FALSE', '6'),
+('Parking Olbia','Via dei Palombari', '07026', 'Olbia', 'SS', 'FALSE', 'FALSE', 'FALSE', '6'),
+('Red Parking','Via Tiburtina Valeria', '65129', 'Pescara', 'PE', 'TRUE', 'FALSE', 'FALSE', '8'),
+('Garage Masini','Via Jacopo Varozzi 9f', '40126', 'Bologna', 'BO', 'FALSE', 'FALSE', 'FALSE', '6'),
+('Garage Fortuna','Piazza Rosselli', '60126', 'Ancona', 'AN', 'FALSE', 'FALSE', 'FALSE', '4')
+
+INSERT INTO orari (name,apertura,chiusura,h24)
+VALUES ('Park Colosseo', '06:30','01:00','FALSE'),
+('Parco Leonardo Parking', '00:00','00:00','TRUE'),
+('Central Parking Malpensa', '00:00','00:00','TRUE'),
+('Garage Sforza', '00:00','00:00','TRUE'),
+('Garage Santa Chiara', '00:00','00:00','TRUE'),
+('Autorimessa Principi di Piemonte', '00:00','00:00','TRUE'),
+('Garage Garibaldi', '00:00','00:00','TRUE'),
+('Garage Santacroce', '07:00','24:00','FALSE'),
+('GP Reggio Calabria', '00:00','00:00','TRUE'),
+('Autopark Ortigia', '07:00','24:00','FALSE'),
+('Parking Garage Olimpo', '07:30','20:00','FALSE'),
+('Garage Venezia Isola Nova', '07:00','24:00','FALSE'),
+('Parking Olbia', '08:00','23:00','FALSE'),
+('Red Parking', '05:00','23:30','FALSE'),
+('Garage Masini', '00:00','00:00','TRUE'),
+('Garage Fortuna', '05:00','24:00','FALSE')
+
+INSERT INTO orari_festivi (name,giorno,mese,apertura,chiusura)
+VALUES ('Park Colosseo', '24','12','06:30','21:00'),
+('Park Colosseo', '25','12','07:00','10:00'),
+('Park Colosseo', '25','12','18:00','21:00'),
+('Park Colosseo', '31','12','06:30','21:00'),
+('Park Colosseo', '1','1','07:00','10:00'),
+('Park Colosseo', '1','1','18:00','01:00'),
+('Parco Leonardo Parking', '0','0','00:00','00:00'),
+('Central Parking Malpensa', '0','0','00:00','00:00'),
+('Garage Sforza', '0','0','00:00','00:00'),
+('Garage Santa Chiara', '0','0','00:00','00:00'),
+('Autorimessa Principi di Piemonte', '0','0','00:00','00:00'),
+('Garage Garibaldi', '24','12','00:00','19:00'),
+('Garage Garibaldi', '25','12','00:00','14:00'),
+('Garage Garibaldi', '25','12','19:00','24:00'),
+('Garage Garibaldi', '26','12','00:00','14:00'),
+('Garage Garibaldi', '26','12','19:00','24:00'),
+('Garage Garibaldi', '31','12','00:00','19:00'),
+('Garage Garibaldi', '1','1','1:30','14:00'),
+('Garage Garibaldi', '1','1','19:00','24:00'),
+('Garage Santacroce', '0','0','00:00','00:00'),
+('GP Reggio Calabria', '0','0','00:00','00:00'),
+('Autopark Ortigia', '0','0','00:00','00:00'),
+('Parking Garage Olimpo', '26','12','08:00','12:00'),
+('Parking Garage Olimpo', '26','12','18:00','21:00'),
+('Garage Venezia Isola Nova', '0','0','00:00','00:00'),
+('Parking Olbia', '0','0','00:00','00:00'),
+('Red Parking', '0','0','00:00','00:00'),
+('Garage Masini', '0','0','00:00','00:00'),
+('Garage Fortuna', '0','0','00:00','00:00')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

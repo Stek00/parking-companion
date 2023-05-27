@@ -3,16 +3,35 @@ body{
   display: flex;
   flex-direction: column;
 }
+
+.logo-text {
+  font-family:'Fira Sans', sans-serif;
+  margin: auto;
+  padding-left: 20%;
+  font-size: 23px;
+  display: flex;
+  color: #ffffff;
+}
+
+.nav-container {
+  height: 30px;
+}
+
+.navbar {
+  border-bottom: 2px solid #FD9236;
+}
+
 .drop-menu {
     display: inline-block;
     cursor: pointer;
-    margin-right: 10%;
+    padding-right: 2%;
+
   }
   
   .bar1, .bar2, .bar3 {
     width: 35px;
     height: 5px;
-    background-color: #333;
+    background-color: #ffffff;
     margin: 6px 0;
     transition: 0.4s;
   }
@@ -34,6 +53,8 @@ body{
   .header-homepage {
     margin: auto;
     margin-top: 5%;
+    color: #ffffff;
+    font-family:'Fira Sans', sans-serif;
     text-align: center;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -43,10 +64,6 @@ body{
     user-select: none;
   }
 
-  @media screen and (max-width: 800px){
-    
-  }
-
   /* Form */
   .center {
     margin: auto;
@@ -54,35 +71,61 @@ body{
     box-shadow: 0 30px 40px rgba(0, 0, 0, .12);
     border: 1px none rgb(0, 0, 0);
     padding: 50px;
+    padding-bottom: 20px;
+    padding-top: 40px;
     border-radius: 25px;
     margin-top: 50px;
     margin-bottom: 80px;
+    background-color: hsl(0, 0%, 100%, 0.4);
+  }
+
+
+  .labelpark {
+    font-weight: 600;
+    margin-bottom: 7px;
   }
   
-  input { display: inline-block;}
 
-  input[type="datetime-local"] {
-      max-width: auto;
+  .form-select {
+    margin-bottom: 12px;
+    border-color: #FD9236;
   }
 
+  .form-select:focus {
+    margin-bottom: 12px;
+    border-color: #FD9236;
+    box-shadow: 0 0 0 0.3rem hsl(28, 98%, 60%, 0.2);
+  }
+
+
+
+
+
   .form-control:focus {
-    border-color: #28a745;
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+    border-color: #FD9236;
+    box-shadow: 0 0 0 0.3rem hsl(28, 98%, 60%, 0.2);
 } 
 
 
   /*Datetime grid*/
-  .inizio .fine{
-    grid-area: a;
+  .inizio, .fine{
     max-width: 50%;
+    font-weight: 600;
+    margin-bottom: 5px;
     float: left;
   }
 
-  .datainizio .datafine{
-    grid-area: b;
-    max-width: 50%;
+
+  .datainizio, .datafine{
+    border-radius: 7px;
+    height: 40px;
+    border: 1px solid #FD9236;
+    text-align: center;
+    max-width: 100%;
     float: left;
   }
+
+
 
   .grid-container{
     display: grid;
@@ -92,10 +135,38 @@ body{
     'b b';
   }
 
+  .labelveicolo {
+    font-weight: 600;
+    margin-top: 10px;
+    
+  }
 
 
-  #inputCar{
+
+  .selectveichle {
+    margin-top: 7px;
+  }
+
+  .prenotabtn{
+    border-radius: 25px;
+    border: none;
+    padding: 10px;
+    position: relative;
+    background-color: #FD9236;
+    left: 46%;
     margin-top: 20px;
+    
+  }
+
+  .prenotabtn:hover{
+    border-radius: 25px;
+    border: none;
+    padding: 10px;
+    position: relative;
+    left: 46%;
+    margin-top: 20px;
+    box-shadow: 0px 0px 8px #ffbc81;
+
   }
 
   .login-container{
@@ -127,7 +198,6 @@ body{
   z-index: 9;
   left: 50%;
   transform: translate(-50%, 0%) rotate(45deg);
-  animation:         fade_move_down 4s ease-in-out infinite;
 }
 
 
@@ -149,22 +219,26 @@ body{
     height: 300px;
     position: relative;
     margin: auto;
-    margin-top: 20%;
+
+    margin-top: 50px;
     margin-bottom: 100px ;
+    padding-bottom: 370px;
     
 }
 
   .google-map div {
     color: rgb(0, 0, 0);
     max-width: 50%;
+    margin-top: 4%;
   }
 
   .google-map iframe {
     height: 100%;
     border-radius: 25px;
     max-width: 40%;
+    max-height: 80%;
     right: 0;
-    top: 0;
+    bottom: 0;
     position: absolute;
 }
 
@@ -192,9 +266,9 @@ body{
 
 .footer-basic {
   padding:40px 0;
-  margin-top: 500px;
-  background-color:#ffffff;
-  color:#4b4c4d;
+  margin-top: 100px;
+  background-color: #0275d8;
+  color:#ffffff;
 }
 
 .footer-basic ul {
@@ -220,34 +294,13 @@ body{
   opacity:1;
 }
 
-.footer-basic .social {
-  text-align:center;
-  padding-bottom:25px;
-}
-
-.footer-basic .social > a {
-  font-size:24px;
-  width:40px;
-  height:40px;
-  line-height:40px;
-  display:inline-block;
-  text-align:center;
-  border-radius:50%;
-  border:1px solid #ccc;
-  margin:0 8px;
-  color:inherit;
-  opacity:0.75;
-}
-
-.footer-basic .social > a:hover {
-  opacity:0.9;
-}
 
 .footer-basic .copyright {
   text-align:center;
   font-size:13px;
-  color:#aaa;
+  color:#ffffff;
   margin-bottom: 0px;
+  margin-top: 30px;
 }
 
 #box-contanier{
@@ -258,6 +311,7 @@ body{
 
   margin-top: 20px;
   margin: auto;
+  margin-bottom: 50px;
 }
 
 
@@ -270,7 +324,7 @@ body{
   width: 44px;
   margin-bottom: 20px;
   border-radius: 8px;
-  background-color: #DBF1FD;
+  background-color: #6691db;
   font-size: 32px;
   color: #ffffff;
 }
@@ -291,4 +345,104 @@ body{
   height: 80px;
   width: 80px;
   margin-bottom: 24px;
+}
+
+.separatore {
+  display: none;
+}
+
+@media screen  and (max-width: 800px){
+  .b1, .b2, .b3{
+    display: none;
+  }
+  
+  #box-contanier{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  margin-top: 50px;
+
+}
+
+
+  
+  .inner-box { 
+    padding: 24px 24px 32px;
+    position: relative;
+    height: 100%;
+    border-radius: 16px;
+    background-color: #f5f4f9;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+  }
+  
+  .icon-inner-box {
+    font-size: 14px;
+    margin-bottom: 24px;
+    margin: auto;
+  }
+
+  .text-inner-box b{
+    margin: auto;
+
+  }
+
+  .separatore {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    box-shadow: 0px 30px 30px rgba(0, 0, 0, .12);
+  }
+}
+
+a.fill-div {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+
+.header-container {
+  background-image: url("/images/layered-waves-haikei.svg");
+  background-size: cover;
+  padding-bottom: 290px;
+}
+
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: #FD9236;
+  margin: 0;
+}
+
+.btn {
+  border-color: #FD9236;
+  color: #FD9236;
+}
+
+.btn:hover {
+  border-color: #FD9236;
+  color: #ffffff;
+  background-color: #FD9236;
+
+}
+
+.contatti{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sep {
+  width: 30%;
+  background-color: #ffffff;
+  height: 1px;
+  margin: auto;
+  margin-top: 10px;
 }
