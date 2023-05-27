@@ -1,0 +1,56 @@
+DROP TABLE IF EXISTS parcheggi;
+
+CREATE TABLE parcheggi (
+    park_id SERIAL PRIMARY KEY,
+    name text NOT NULL,
+    via text NOT NULL,
+	cap integer NOT NULL,
+	citta text  NOT NULL,
+	provincia text NOT NULL,
+	aeroporto boolean,
+	navetta boolean,
+	porto boolean,
+	prezzo integer
+);
+
+CREATE TABLE orari (
+    orari_id SERIAL PRIMARY KEY,
+    name text NOT NULL,
+    apertura time(0),
+	chiusura time(0),
+	h24 boolean,
+	FOREIGN KEY (name) REFERENCES parcheggi(name)
+	
+);
+
+CREATE TABLE orari_festivi (
+    orari_id SERIAL PRIMARY KEY,
+    name text NOT NULL,
+	giorno integer NOT NULL,
+	mese integer NOT NULL,
+    apertura time(0),
+	chiusura time(0),
+	FOREIGN KEY (name) REFERENCES parcheggi(name)
+	
+);
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+	veicolo VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE parking_reservations (
+    id SERIAL PRIMARY KEY,
+    user_id INT NOT NULL,
+    parking_spot_id INT NOT NULL,
+    start_time TIMESTAMP NOT NULL,
+    end_time TIMESTAMP NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (parking_spot_id) REFERENCES parcheggi(park_id)
+);
+

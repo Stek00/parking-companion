@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+ margin: 0;
+ padding: 0;
+ font-family: 'Montserrat', sans-serif;
+}
+body{
+ height: 100vh;
+ width: 100%;
+ background: linear-gradient(135deg, #f7cac9 0%, #ffffff 100%);
+}
+.container{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ height: 100%;
+ width: 100%;
+}
+.registration-box{
+ padding: 100px 100px 50px 100px;
+ box-shadow: 0 70px 70px rgba(0, 0, 0, 0.12);
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ position: relative;
+ width: 400px;
+ font-size: 14px;
+ border-radius: 40px;
+}
+.user-icon{
+ background: rgba(247, 202, 201, 1) 0%;
+ border-radius: 50%;
+ width: 100px;
+ height: 100px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ position: absolute;
+ top: -50px;
+}
+.user-icon i{
+ font-size: 40px;
+ color: #FFF;
+}
+.registration{
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-gap: 10px;
+width: max-content;
+}
+.form-group{
+ margin-bottom: 20px;
+ 
+ display: flex;
+ flex-direction: column;
+ width: 100%;
+}
+input[type="text"].form-control, input[type="password"].form-control{
+ font-size: 16px;
+ outline: none;
+ width: calc(100% - 36px);
+ border: 1px solid #CCC;
+ padding: 16px;
+ border-radius: 10px;
+ transition: all 0.3s ease;
+
+}
+input[type="text"].form-control:hover, input[type="password"].form-control:hover{
+ border: 1px solid #f7a17c;
+}
+input[type="text"].form-control:focus, input[type="password"].form-control:focus{
+ border: 1px solid #f7a17c;
+}
+input[type="text"].form-control:active, input[type="password"].form-control:active{
+ border: 1px solid #f7a17c;
+}
+label{
+ display: flex;
+ align-items: center;
+ cursor: pointer;
+}
+label input[type="checkbox"]{
+ width: 20px;
+ height: 20px;
+ margin-right: 10px;
+ cursor: pointer;
+}
+button{
+ outline: none;
+ background: #f7cac9;
+ color: #FFF;
+ padding: 16px;
+ display: block;
+ width: 100%;
+ border:none;
+ text-transform: uppercase;
+ font-size: 16px;
+ border-radius: 25px;
+ cursor: pointer;
+ transition: all 0.3s ease;
+}
+button:hover{
+ box-shadow: 5px 5px 5px rgba(223, 93, 93, 0.455);
+}
+
+
+.option-veicoli {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+

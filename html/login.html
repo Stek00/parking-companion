@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://kit.fontawesome.com/d1f41f10be.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+
+
+    <title>Login</title>
+    <link rel="stylesheet" href="/styles/login.css" />
+    <script src="/scripts/login.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="login-box">
+        <div class="user-icon">
+          <i class="far fa-user"></i>
+        </div>
+        <form class="login">
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="Email"
+              id="email"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              placeholder="Password"
+              id="password"
+              class="form-control"
+            />
+          </div>
+
+          <div class="form-group">
+            <button class="full-btn">Login</button>
+          </div>
+          <div class="form-group">
+            <p>
+              Non sei ancora registrato? <a href="register.html">Registrati</a>
+            </p>
+          </div>
+        </form>
+        <div class="serparater">Oppure puoi entrare con i tuoi social</div>
+        <div class="social-login">
+            
+            <div id="g_id_onload"
+                data-client_id="357242105420-s829phnr33rgcb0gcd439ilsudhueil8.apps.googleusercontent.com"
+                data-context="signup"
+                data-ux_mode="popup"
+                data-callback="handleCredentialResponse"
+                data-auto_prompt="false">
+            </div>
+
+            <div class="g_id_signin"
+                data-type="standard"
+                data-shape="pill"
+                data-theme="filled_blue"
+                data-text="signin_with"
+                data-size="large"
+                data-logo_alignment="left">
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
